@@ -1,0 +1,5 @@
+{
+  "BACKEND_URL": "https://api.openweathermap.org/",
+  "BACKEND_KEY": "8d85f2f6",
+  "UseBackend": "true"
+}
