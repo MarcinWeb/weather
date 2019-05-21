@@ -1,21 +1,26 @@
-<div class="weather-details container-fluid">
-  <div class="row justify-content-center align-items-center">
+<div class="weather-details  ">
+  <div class="row m-4 justify-content-center align-items-center">
     <div class="col-md-12 col-lg-6 text-center">
       <h1 class="weather-details__city"> {{weatherSettings.location}} </h1>
       <p class="weather-details__date"> {{forecast.dt_txt}} </p>
       <app-weather-element class="weather-details__element"
                            [weather]="forecast.weather[0]"></app-weather-element>
     </div>
-    <div class="col-12 col-lg-5">
+    <div class="col-12 col-lg-6 text-lg-right">
+      <div class="row">
+      <div class="col-sm-6 col-lg-12">
       <app-weather-main class="weather-details__main"
                         [weatherMain]="forecast.main"
                         [scale]="weatherSettings.scale"></app-weather-main>
-
+      </div>
+      <div class="col-sm-6 col-lg-12">
       <p class="weather-details__cloudy">
         <i class="wi wi-cloudy"></i>{{forecast.clouds.all}}%</p>
       <app-weather-wind class="weather-details__wind"
                         [weatherWind]="forecast.wind"
                         [scale]="weatherSettings.scale"></app-weather-wind>
+      </div>
+      </div>
 
     </div>
   </div>
