@@ -4,11 +4,11 @@ import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {routing} from './app-routing';
 import { AppComponent } from './app.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {HomeComponent} from './home/home.component';
 import {WeatherModule} from './weather/weather.module';
 import {AppConfigService} from './app-config.service';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import {HomeService} from './home/home.service';
+import {ComponentModule} from './component/component.module';
+import { HttpClientModule} from '@angular/common/http';
 const appInitializerFn = (appConfig: AppConfigService) => {
   return () => {
     return appConfig.loadAppConfig();
@@ -17,13 +17,14 @@ const appInitializerFn = (appConfig: AppConfigService) => {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    routing,
-    WeatherModule
+    ComponentModule,
+    WeatherModule,
+    HttpClientModule,
+    routing
   ],
   providers: [
     AppConfigService,
@@ -34,7 +35,6 @@ const appInitializerFn = (appConfig: AppConfigService) => {
       deps: [AppConfigService]
     },
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-    HomeService
   ],
   bootstrap: [AppComponent]
 })

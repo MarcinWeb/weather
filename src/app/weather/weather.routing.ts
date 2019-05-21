@@ -3,12 +3,12 @@ import {WeatherComponent} from './weather.component';
 
 export const weatherRoutes: Routes = [
   {
-    path: ':id',
+    path: '',
     component: WeatherComponent
   }
 ];
 
 export const weatherLazyLoadRoute: Route = {
-  path: 'title',
+  path: 'weather',
   loadChildren: 'app/weather/weather.module#WeatherModule'
 };

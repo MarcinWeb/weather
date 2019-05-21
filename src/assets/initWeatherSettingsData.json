@@ -1,0 +1,8 @@
+{
+  "location": "london",
+  "scale": "CELCIUS",
+  "showWind": true,
+  "showDetails": true,
+  "showForecast": true,
+  "forecastMode": "GRID"
+}

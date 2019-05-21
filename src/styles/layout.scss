@@ -1,0 +1,40 @@
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+
+  //background: -ms-linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 1)), url(assets/img/background.jpg) no-repeat;
+  //background: -webkit-linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 1)), url(assets/img/background.jpg) no-repeat;
+  //background: -o-linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 1)), url(assets/img/background.jpg) no-repeat;
+  //background: -moz-linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 1)), url(assets/img/background.jpg) no-repeat;
+  //background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 1)), url(assets/img/background.jpg) no-repeat;
+  background: url(assets/img/background.jpg) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+ul{
+  list-style-type:none;
+}
+a {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+}
+
+a:hover {
+  color: $color-accent;
+  text-decoration: none;
+}
+
+a:active {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+i {
+  margin-right: 10px;
+}

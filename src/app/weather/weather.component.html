@@ -1,3 +1,18 @@
-<div>
-<!--  <chart *ngIf="weather" [weather]="weather"></chart>-->
+<div *ngIf="weatherSettings">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 col-lg-2">
+       <app-weather-settings [weatherSettings]="weatherSettings" (settings)="changeSettings($event)">
+       </app-weather-settings>
+      </div>
+      <div class="col-sm-12 col-md-7 col-lg-10">
+        <app-weather-details *ngIf="weather" [weatherSettings]="weatherSettings" [forecast]="forecast"></app-weather-details>
+        <span *ngIf="errorMessage">{{this.errorMessage}}</span>
+      </div>
+      <div  class="col-sm-12"  *ngIf="weather">
+        <app-weather-graphs [forecasts]="weather.list" [weatherSettings]="weatherSettings"
+        (fillDetails)="fillDetails($event)"></app-weather-graphs>
+      </div>
+    </div>
+    </div>
 </div>

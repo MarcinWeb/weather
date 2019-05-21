@@ -1,0 +1,6 @@
+app-weather-details {
+  .weather-details {
+    margin: 20px;
+    @include font-size(1.6)
+  }
+}

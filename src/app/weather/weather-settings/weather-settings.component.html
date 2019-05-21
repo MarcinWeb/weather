@@ -1,0 +1,33 @@
+<form [formGroup]="weatherSettingsForm">
+  Weather settings
+  <div class="form-group">
+    <label for="cityName">Place</label>
+    <input type="text" class="form-control"  value="{{weatherSettings.location}}" (keyup)="searchLocation$.next($event.target.value)" id="cityName" placeholder="London. etc">
+  </div>
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" formControlName="showWind" class="custom-control-input" id="showWind">
+    <label class="custom-control-label" for="showWind">Show wind</label>
+  </div>
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" formControlName="showDetails" class="custom-control-input" id="showDetails">
+    <label class="custom-control-label" for="showDetails">Show details</label>
+  </div>
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" formControlName="showForecast" class="custom-control-input" id="showForecast">
+    <label class="custom-control-label" for="showForecast">Show forecast</label>
+  </div>
+
+  <div class="form-group">
+    <label for="forecastMode">Forecast mode</label>
+    <select class="form-control" formControlName="forecastMode" id="forecastMode">
+      <option *ngFor="let key of objectKeys(forecastMode)" [value]="forecastMode[key]">{{key}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="temperatureUnits">temperature units</label>
+    <select class="form-control" formControlName="scale" id="temperatureUnits">
+      <option *ngFor="let key of objectKeys(temperatureScale)" [value]="temperatureScale[key]">{{key}}</option>
+    </select>
+  </div>
+</form>
