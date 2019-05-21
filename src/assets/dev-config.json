@@ -1,5 +1,5 @@
 {
-  "BACKEND_URL": "http://api.openweathermap.org/data/2.5/forecast",
+  "BACKEND_URL": "https://api.openweathermap.org/data/2.5/forecast",
   "BACKEND_KEY": "362782e18dd1d252cfd00fc87e8002c5",
   "UseBackend": "true"
 }
