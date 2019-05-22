@@ -6,10 +6,12 @@ export interface WeatherSettings {
   showForecast?: boolean;
   forecastMode?: ForecastMode;
 }
+
 export enum ForecastMode {
   GRID = 'GRID',
   DETAILED = 'DETAILED',
 }
+
 export enum TemperatureScale {
   CELCIUS = 'CELCIUS',
   KELVIN = 'KELVIN',

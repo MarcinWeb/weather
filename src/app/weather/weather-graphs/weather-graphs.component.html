@@ -1,16 +1,13 @@
 <div *ngIf="forecasts">
   <div class="container-fluid">
     <div class="row justify-content-around align-items-center">
-      <div class="col-sm-10 col-md-6 col-lg-4 col-xl-2" *ngFor="let day of objectKeys(fiveDayForecast)">
-        <div (click)="fillWeatherDetails(fiveDayForecast[day])" class="weather-graph">
-
-          <div>
+      <div class="col-sm-10 col-md-6 col-lg-4 col-xl-2" *ngFor="let day of objectKeys(nDayForecast)">
+        <div (click)="fillWeatherDetails(nDayForecast[day])" class="weather-graph">
             <div>
-              {{fiveDayForecast[day][0]?.dt_txt | date:'EEEE' }}
-              <span><img [src]="'http://openweathermap.org/img/w/' + fiveDayForecast[day][0].weather[0].icon + '.png'"></span>
+              {{nDayForecast[day][0]?.dt_txt | date:'EEEE' }}
+              <span><img [src]="'https://openweathermap.org/img/w/' + nDayForecast[day][0].weather[0].icon + '.png'"></span>
             </div>
-            <app-weather-chart [forecasts]="fiveDayForecast[day]"></app-weather-chart>
-          </div>
+            <app-weather-chart [forecasts]="nDayForecast[day]"></app-weather-chart>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { WeatherElementService } from './weather-element.service';
 
 describe('WeatherElementService', () => {

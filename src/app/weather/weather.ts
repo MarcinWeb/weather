@@ -5,6 +5,7 @@ export interface WeatherApiResponse {
   cnt: number;
   list: Forecast[];
 }
+
 export interface City {
   id: number;
   name: string;
@@ -12,6 +13,7 @@ export interface City {
   country: string;
   population: number;
 }
+
 export interface Forecast {
   dt: number;
   dt_txt: string;
@@ -23,12 +25,14 @@ export interface Forecast {
   };
   sys: WeatherSys;
 }
+
 export interface WeatherElement {
   id: number;
   main: string;
   description: string;
   icon: string;
 }
+
 export interface WeatherMain {
   temp: number;
   pressure: number;
@@ -36,10 +40,12 @@ export interface WeatherMain {
   temp_min: number;
   temp_max: number;
 }
+
 export interface WeatherWind {
   speed: number;
   deg: number;
 }
+
 export interface WeatherSys {
   type: number;
   id: number;
@@ -48,6 +54,7 @@ export interface WeatherSys {
   sunrise: number;
   sunset: number;
 }
+
 export interface WeatherCoord {
   lon: number;
   lat: number;

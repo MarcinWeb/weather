@@ -1,9 +1,9 @@
-import {Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { Chart, ChartOptions, ChartData } from 'chart.js';
+
 @Component({
   selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  templateUrl: './chart.component.html'
 })
 export class ChartComponent implements OnChanges {
   @ViewChild('myCanvas') myCanvas: ElementRef;
@@ -17,11 +17,13 @@ export class ChartComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     this.chartUpdate();
   }
+
   chartUpdate(): void {
     if (this.chart) {
       this.chart.destroy();
     }
-    this.myCanvas.nativeElement.getContext('2d').clearRect(0, 0, this.myCanvas.nativeElement.width, this.myCanvas.nativeElement.height)
+    this.myCanvas.nativeElement.getContext('2d')
+      .clearRect(0, 0, this.myCanvas.nativeElement.width, this.myCanvas.nativeElement.height);
     const ctx = this.myCanvas.nativeElement.getContext('2d');
 
     this.chart = new Chart(ctx, {
@@ -30,5 +32,4 @@ export class ChartComponent implements OnChanges {
       options: this.options
     });
   }
-
 }

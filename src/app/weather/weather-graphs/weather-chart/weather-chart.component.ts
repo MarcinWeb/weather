@@ -1,19 +1,17 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Forecast} from '../../weather';
-import {ChartOptions, ChartData} from 'chart.js';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Forecast } from '../../weather';
+import { ChartOptions, ChartData } from 'chart.js';
 
 @Component({
   selector: 'app-weather-chart',
-  templateUrl: './weather-chart.component.html',
-  styleUrls: ['./weather-chart.component.scss']
+  templateUrl: './weather-chart.component.html'
 })
-export class WeatherChartComponent implements OnInit, OnChanges {
+export class WeatherChartComponent implements OnChanges {
   data: ChartData;
   options: ChartOptions;
   @Input() forecasts: Forecast[];
-  constructor() { }
 
-  ngOnInit() {}
+  constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.data = this.chartDataUpdate();
@@ -23,18 +21,18 @@ export class WeatherChartComponent implements OnInit, OnChanges {
   chartDataUpdate(): ChartData {
     const tempMax = this.forecasts.map(res => res.main.temp_max);
     const tempMin = this.forecasts.map(res => res.main.temp_min);
-    const alldates = this.forecasts.map(res => res.dt_txt);
+    const allDates = this.forecasts.map(res => res.dt_txt);
     return {
-      labels: alldates,
+      labels: allDates,
       datasets: [
         {
           data: tempMax,
-          borderColor: "#3cba9f",
+          borderColor: "#b20000",
           fill: true
         },
         {
           data: tempMin,
-          borderColor: "#ffcc00",
+          borderColor: "#000099",
           fill: true
         },
       ]

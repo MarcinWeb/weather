@@ -1,13 +1,12 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ForecastMode, TemperatureScale, WeatherSettings} from '../weather-settings/weather-settings';
-import {Subject, Subscription} from 'rxjs';
-import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ForecastMode, TemperatureScale, WeatherSettings } from '../weather-settings/weather-settings';
+import { Subject, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-weather-settings',
-  templateUrl: './weather-settings.component.html',
-  styleUrls: ['./weather-settings.component.scss']
+  templateUrl: './weather-settings.component.html'
 })
 export class WeatherSettingsComponent implements OnInit, OnDestroy {
   weatherSettingsForm: FormGroup;
@@ -15,7 +14,6 @@ export class WeatherSettingsComponent implements OnInit, OnDestroy {
   forecastMode = ForecastMode;
   temperatureScale = TemperatureScale;
   private subscr: Subscription;
-
   @Output() settings: EventEmitter<WeatherSettings> = new EventEmitter();
   @Input() weatherSettings: WeatherSettings;
 

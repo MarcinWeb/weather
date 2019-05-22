@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WeatherElementService {
-  weatherInconName = new Map([
+  weatherIconName = new Map([
     ['01d', 'wi-day-sunny'],
     ['01n', 'wi-night-clear'],
     ['02d', 'wi-day-cloudy'],
@@ -24,9 +24,10 @@ export class WeatherElementService {
     ['50d', 'wi-fog'],
     ['50n', 'wi-fog'],
   ]);
-  constructor() { }
-  convertIcon(icon): string {
-    return this.weatherInconName.get(icon);
-  }
 
+  constructor() { }
+
+  convertIcon(icon): string {
+    return this.weatherIconName.get(icon);
+  }
 }

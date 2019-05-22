@@ -1,5 +1,5 @@
-import {Routes, Route} from '@angular/router';
-import {WeatherComponent} from './weather.component';
+import { Routes, Route } from '@angular/router';
+import { WeatherComponent } from './weather.component';
 
 export const weatherRoutes: Routes = [
   {

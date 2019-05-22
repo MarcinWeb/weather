@@ -1,19 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {WeatherMain} from '../../weather';
-import {TemperatureScale} from '../../weather-settings/weather-settings';
+import { Component, Input } from '@angular/core';
+import { WeatherMain } from '../../weather';
+import { TemperatureScale } from '../../weather-settings/weather-settings';
 
 @Component({
   selector: 'app-weather-main',
-  templateUrl: './weather-main.component.html',
-  styleUrls: ['./weather-main.component.scss']
+  templateUrl: './weather-main.component.html'
 })
-export class WeatherMainComponent implements OnInit {
+export class WeatherMainComponent {
   @Input() weatherMain: WeatherMain;
   @Input() scale: TemperatureScale;
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor() { }
 
   scaleTemperature(scale) {
     switch (scale) {

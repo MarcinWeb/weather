@@ -1,20 +1,20 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {WeatherService} from './weather.service';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {TemperatureScale, WeatherSettings} from './weather-settings/weather-settings';
-import {Forecast, WeatherApiResponse} from './weather';
+import { Component, OnInit } from '@angular/core';
+import { WeatherService } from './weather.service';
+import { Observable } from 'rxjs';
+import { TemperatureScale, WeatherSettings } from './weather-settings/weather-settings';
+import { Forecast, WeatherApiResponse } from './weather';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
 })
-export class WeatherComponent implements OnInit, OnDestroy {
+export class WeatherComponent implements OnInit {
   weather: WeatherApiResponse;
   forecast: Forecast;
   weatherSettings: WeatherSettings;
   errorMessage = '';
-  constructor(private weatherService: WeatherService, private route: ActivatedRoute) {
+
+  constructor(private weatherService: WeatherService) {
   }
 
   ngOnInit() {
@@ -25,23 +25,21 @@ export class WeatherComponent implements OnInit, OnDestroy {
     this.getWeather(location, scale).subscribe((weather: WeatherApiResponse) => {
       this.weather = weather;
       this.forecast = weather.list[0];
-      this.errorMessage = '';
+      this.errorMessage = null;
     },
-      (error => {this.errorMessage = error.error.message; }));
+      (error => {
+        this.weather = null;
+        this.forecast = null;
+        this.errorMessage = error.error.message; }));
   }
-
-  ngOnDestroy(): void {}
 
   private getWeather(location, scale): Observable<WeatherApiResponse> {
     return this.weatherService.getWeather(location, scale );
   }
 
   changeSettings(event: WeatherSettings) {
-    console.log('settings changed', event);
     this.weatherSettings = event;
     this.updateWeatherData(this.weatherSettings.location, this.weatherSettings.scale);
-    console.log('settings changed', this.weatherSettings);
-
   }
 
   initWeatherSettings() {
@@ -53,11 +51,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
   }
 
   fillDetails(event: Forecast) {
-    console.log('evemt', event);
     this.forecast = event;
-  }
-  currentForecast() {
-    return;
   }
 }
 

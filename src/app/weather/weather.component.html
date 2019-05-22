@@ -1,17 +1,18 @@
 <div *ngIf="weatherSettings">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <div class="col-sm-12 col-md-4 col-lg-4">
        <app-weather-settings [weatherSettings]="weatherSettings" (settings)="changeSettings($event)">
        </app-weather-settings>
       </div>
-      <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+      <div class="col-sm-12 col-md-8 col-lg-8">
         <app-weather-details *ngIf="weather" [weatherSettings]="weatherSettings" [forecast]="forecast"></app-weather-details>
         <span *ngIf="errorMessage">{{this.errorMessage}}</span>
       </div>
-      <div  class="col-sm-12"  *ngIf="weather">
-        <app-weather-graphs [forecasts]="weather.list" [weatherSettings]="weatherSettings"
-        (fillDetails)="fillDetails($event)"></app-weather-graphs>
+      <div class="col-sm-12" *ngIf="weather && weatherSettings.showForecast">
+        <h1 class="text-center">forecast for 5 days</h1>
+          <app-weather-graphs [forecasts]="weather.list"
+          (fillDetails)="fillDetails($event)"></app-weather-graphs>
       </div>
     </div>
     </div>
