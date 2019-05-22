@@ -1,6 +1,8 @@
 # AppWeather
 
 ##How to work with project
+demo 
+https://angular-hosting-weather.firebaseapp.com
 
 I generated project with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6. 
 but i have few global dependency when i build it. 
@@ -33,7 +35,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ### Running deploy on firebase hosting
 
-Run `ng deploy` it will build prod and run deploy on firebase
+Run `npm run deploy` it will build prod and run deploy on firebase
 
 
 ### Further help
