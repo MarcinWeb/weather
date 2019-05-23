@@ -30,7 +30,7 @@ export class WeatherComponent implements OnInit {
       (error => {
         this.weather = null;
         this.forecast = null;
-        this.errorMessage = error.error.message; }));
+        this.errorMessage = error.error.message.toUpperCase(); }));
   }
 
   private getWeather(location, scale): Observable<WeatherApiResponse> {

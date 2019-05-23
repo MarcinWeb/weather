@@ -5,9 +5,9 @@
        <app-weather-settings [weatherSettings]="weatherSettings" (settings)="changeSettings($event)">
        </app-weather-settings>
       </div>
-      <div class="col-sm-12 col-md-8 col-lg-8">
+      <div class="col-sm-12 col-md-8 col-lg-8 align-self-center">
         <app-weather-details *ngIf="weather" [weatherSettings]="weatherSettings" [forecast]="forecast"></app-weather-details>
-        <span *ngIf="errorMessage">{{this.errorMessage}}</span>
+        <h1 *ngIf="errorMessage" class="text-center">{{this.errorMessage}}</h1>
       </div>
       <div class="col-sm-12" *ngIf="weather && weatherSettings.showForecast">
         <h1 class="text-center">forecast for 5 days</h1>

@@ -1,0 +1,55 @@
+.form-custom {
+  .form-control {
+    background-color: transparent;
+    border: 2px solid $primary-border-color;
+    color: $primary-text-color;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0;
+  }
+
+  .form-control:focus, .custom-control-input:focus {
+    color: $secondary-text-color;
+    background-color: transparent;
+    border-color: $secondary-border-color;
+    box-shadow: none;
+  }
+
+  .form-control:hover, .custom-control-input:hover {
+    border-color: $secondary-border-color;
+  }
+
+  .custom-control-label::before {
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    content: "";
+    background-color: transparent;
+    border: $primary-border-color solid 2px;
+  }
+
+  .custom-control-input:checked~.custom-control-label::before {
+    color: $primary-text-color;
+    border-color: $primary-border-color;
+    background-color: transparent;
+  }
+
+  .custom-control-input:focus~.custom-control-label::before {
+    color: $secondary-text-color;
+    background-color: transparent;
+    border-color: $secondary-border-color;
+    box-shadow: none;
+  }
+
+  .custom-control-input:hover~.custom-control-label::before {
+    border-color: $secondary-border-color;
+  }
+
+  .custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+  }
+}

@@ -1,13 +1,14 @@
-$color-orange-red: #EE4540;
-$color-red: #C72C41;
-$color-dark-red: #801336;
-$color-violet-red: #510A32;
-$color-dark-violet: #2D142C;
-$color-accent: $color-orange-red;
-$color-primary: $color-red;
-$color-secondary: $color-dark-red;
-$color-accent-dark: $color-violet-red;
-$color-dark: $color-dark-violet;
+$color-white: #fff;
+$color-gray: #a3a3a3;
+$color-dark-red: #b20000;
+$color-dark-blue: #000099;
+
+$primary-text-color: $color-white;
+$primary-border-color: $color-white;
+$secondary-text-color: $color-gray;
+$secondary-border-color: $color-gray;
+$temp-max: $color-dark-red;
+$temp-min: $color-dark-blue;
 
 $grid-columns:      12;
 $grid-gutter-width: 30px;
@@ -34,7 +35,9 @@ $container-max-widths: (
 @import '~bootstrap/scss/mixins';
 @import 'mixins.scss';
 @import 'layout.scss';
+@import 'controls.scss';
 @import 'component/weather';
 @import 'component/weather-graphs';
 @import 'component/weather-element';
 @import 'component/weather-details';
+
